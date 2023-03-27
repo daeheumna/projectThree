@@ -27,6 +27,7 @@ const RecipeGallery = (props) => {
 
                             altText = { recipe.recipe.label}
                             
+                            key={recipe.recipe.calories}
                             />
                         )
                     })
