@@ -11,7 +11,7 @@ const Recipes = () => {
     const [ recipes, setRecipes] = useState([]);
     const [ apiError, setApiError ] = useState(false);
 
-    const [ mealType, setMealType ] = useState([])
+    const [ mealType, setMealType ] = useState('breakfast')
 
 
     // useEffect( () => {
@@ -53,19 +53,19 @@ const Recipes = () => {
         // construct our URL
         const url = new URL('https://api.edamam.com/api/recipes/v2');
         url.search = new URLSearchParams({
-            type: 'public',
+            type: 'any',
             app_id: '37457af6',
             app_key: '4e5b5013620e0769c87783ec9aef2ca3',
             random: true,
             q: ingredientInput,
+            // cuisineType: 'world',
+            // dishType:
             
         })
 
         // async request (it will return a Promise)
         fetch(url)
             .then((result) => {
-
-                // ok is a property within the Promise object which will tell us how our Promise (AKA asyn request) resolved
                 if (result.ok){
                 return result.json();
                 } else {
@@ -75,7 +75,7 @@ const Recipes = () => {
             .then((apiData) => {
                 // console.log(apiData.hits);
                 setRecipes(apiData.hits);
-
+                console.log(apiData.hits)
                 setApiError(false)
             })
             .catch((err) => {
