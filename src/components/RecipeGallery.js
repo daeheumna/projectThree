@@ -2,13 +2,13 @@ import RecipesInfo from "./RecipesInfo"
 
 const RecipeGallery = (props) => {
 
-    const displayRecipes = () => {
-        props.recipes.map((recipe) => {
-            return (
-                <li>{recipe.recipe.label}</li>
-            )
-        })
-    }
+    // const displayRecipes = () => {
+    //     props.recipes.map((recipe) => {
+    //         return (
+    //             <li>{recipe.recipe.label}</li>
+    //         )
+    //     })
+    // }
 
     return (
         <section>

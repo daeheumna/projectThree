@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 import Form from './Form';
 import RecipeGallery from './RecipeGallery';
@@ -9,9 +9,9 @@ const Recipes = () => {
 
     const [ ingredientInput, setingredientInput ] = useState('')
     const [ recipes, setRecipes] = useState([]);
-    const [ apiError, setApiError ] = useState(false);
+    // const [ apiError, setApiError ] = useState(false);
 
-    const [ mealType, setMealType ] = useState('breakfast')
+    // const [ mealType, setMealType ] = useState('breakfast')
 
 
     // useEffect( () => {
@@ -76,12 +76,12 @@ const Recipes = () => {
                 // console.log(apiData.hits);
                 setRecipes(apiData.hits);
                 console.log(apiData.hits)
-                setApiError(false)
+                // setApiError(false)
             })
-            .catch((err) => {
-                setApiError(true);
+            // .catch((err) => {
+            //     setApiError(true);
 
-            })
+            // })
     }
 
 
