@@ -4,17 +4,19 @@ const RecipesInfo = (props) => {
 
             <h3>{props.recipeName}</h3>
             
+            <figure className='photo-container'>
             <img src={props.photoUrl} alt={props.altText}></img>
+            </figure>
 
-            <ul>{props.ingredients.map((item)=>{
+            <ul><h4>Ingredients:</h4> {props.ingredients.map((item)=>{
                 return(
                     <li>{item}</li>
                 )
             })}</ul>
 
-            <p>Portion Size: {props.portion}</p>
+            <h4>Portion Size: {props.portion}</h4>
 
-            <p>Calories: {Math.round(props.calories *100)/100}</p>
+            <h4>Calories: {Math.round(props.calories *100)/100}</h4>
 
             <div className="macros">
             <h4>Macros: {props.macros}</h4>

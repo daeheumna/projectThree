@@ -1,19 +1,24 @@
+
+
 const AdvancedForm = (props) => {
+
+
     return (
         <>
             <form onSubmit={props.handleSubmit}>
                 <label htmlFor='ingredients'></label>
-                <input type='text' id='ingredients' onChange={props.handleChange} value={props.typedValue}></input>
+                <input type='text' id='ingredients' onChange={props.handleChange} value={props.typedValue} required></input>
 
                 <label>Meal Type</label>
                 <select onChange={props.handleMealType}
                 value={props.mealType}>
-                    <option value='placeholder'></option>
+                    <option value=''></option>
                     <option value="breakfast">Breakfast</option>
                     <option value="lunch">Lunch</option>
                     <option value="dinner">Dinner</option>
                     <option value="snack">Snack</option>
                     <option value="teatime">Teatime</option>
+                    
                 </select>
 
                 <label>Diet</label>
@@ -54,6 +59,29 @@ const AdvancedForm = (props) => {
                     <option value="soup">Soup</option>
                     <option value="special occasions">Special Occasions</option>
                     <option value="starter">Starter</option>
+                </select>
+
+                <label>Cuisine Types</label>
+                <select onChange={props.handleCuisine}
+                value={props.cuisineType}>
+                    <option value='placeholder'></option>
+                    <option value="american">American</option>
+                    <option value="asian">Asian</option>
+                    <option value="british">British</option>
+                    <option value="caribbean">Caribbean</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="french">French</option>
+                    <option value="greek">Greek</option>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="korean">Korean</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="middle eastern">Middle Eastern</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="south american">South American</option>
+                    <option value="south east asian">South East Asian</option>
                 </select>
 
                 <button>Submit</button>

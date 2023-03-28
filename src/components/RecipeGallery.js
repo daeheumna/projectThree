@@ -15,11 +15,11 @@ const RecipeGallery = (props) => {
                                 <RecipesInfo 
                                 
                                 recipeName = {recipe.recipe.label}
-                                fullRecipe = { recipe.recipe.url}
+                                fullRecipe = {recipe.recipe.url}
 
-                                photoUrl = { recipe.recipe.image}
+                                photoUrl = {recipe.recipe.image}
 
-                                altText = { recipe.recipe.label}
+                                altText = {recipe.recipe.label}
 
                                 calories = {recipe.recipe.calories}
                                 

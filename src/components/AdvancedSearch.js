@@ -12,7 +12,7 @@ const AdvancedSearch = () => {
     const [ mealType, setMealType ] = useState(null);
     const [ diet, setDiet ] = useState(null);
     const [ dishType, setDishType ] = useState(null);
-
+    const [ cuisineType, setCuisineType ] = useState(null);
   
 
     const handleChange = (e) => {
@@ -30,6 +30,10 @@ const AdvancedSearch = () => {
     const handleDishType = (e) => {
         setDishType(e.target.value);
     }
+
+    const handleCuisine = (e) => {
+        setCuisineType(e.target.value);
+    }
    
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,10 +49,9 @@ const AdvancedSearch = () => {
             random: true,
             q: ingredientInput,
             mealType: mealType,
-            Diet: diet,
-            dishType: dishType
-            
-            
+            diet: diet,
+            dishType: dishType,
+            cuisineType: cuisineType  
         })
 
         fetch(url)
@@ -69,14 +72,16 @@ const AdvancedSearch = () => {
 
     return (
         <main>
-
+            <section className='advancedSearch'>
             <AdvancedForm 
             handleChange={handleChange}
             handleMealType = {handleMealType} 
             typedValue={ingredientInput}
             handleSubmit={ handleSubmit}
             handleDiet = { handleDiet}
-            handleDishType = { handleDishType}/>
+            handleDishType = { handleDishType}
+            handleCuisine = { handleCuisine}
+            />
 
             <Link to='/'>
                 <p>Basic Search</p>
@@ -84,7 +89,7 @@ const AdvancedSearch = () => {
             
             <RecipeGallery
             recipes={recipes}/>
-            
+            </section>
         </main>
     )
 }
