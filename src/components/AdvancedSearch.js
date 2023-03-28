@@ -84,7 +84,7 @@ const AdvancedSearch = () => {
             />
 
             <Link to='/'>
-                <p>Basic Search</p>
+                <p className='searchOption'>Basic Search</p>
             </Link>
             
             <RecipeGallery

@@ -7,13 +7,18 @@ html { box-sizing: border-box;}
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 
-h1, h2, h3, h4, h5, p, ul, li, figure, img {
+html {
+  font-size: 125%;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, ul, li, figure, img, a {
   margin: 0;
   padding: 0;
 }
 
 .wrapper{
-  max-width: 1200px;
+  max-width: 1300px;
   width: 85%;
   margin: 0 auto;
 }
@@ -29,6 +34,29 @@ ul {
   
 }
 
+a {
+  text-decoration: none;
+}
+
+.App {
+  display:flex;
+  flex-direction: column;
+  padding-top: 10%;
+  gap: 30px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+header h6 {
+  font-weight: 400;
+  width: 20%;
+}
+
 .recipes {
   display: flex;
   flex-wrap: wrap;
@@ -41,4 +69,46 @@ ul {
   display: flex;
   flex-direction: column;
   width: 30%
+}
+
+.gallery {
+  position: relative;
+}
+
+.gallery .photo-container img {
+  border: 1px solid #eee;
+  padding: 5px;
+}
+
+.gallery .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background:rgba(225,225,225,0.9);
+  color: #222;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.gallery .caption:hover {
+  opacity: 1;
+}
+
+.gallery .caption ul {
+  overflow: scroll;
+}
+
+
+.gallery .caption li {
+  font-size: 0.9rem;
 }

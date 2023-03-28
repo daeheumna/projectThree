@@ -4,15 +4,14 @@ const AdvancedForm = (props) => {
 
 
     return (
-        <>
             <form onSubmit={props.handleSubmit}>
-                <label htmlFor='ingredients'></label>
-                <input type='text' id='ingredients' onChange={props.handleChange} value={props.typedValue} required></input>
+                <label htmlFor='ingredients' className='sr-only'>ingredients</label>
+                <input type='text' id='ingredients' onChange={props.handleChange} value={props.typedValue} required placeholder='ingredients'></input>
 
-                <label>Meal Type</label>
+                <label htmlFor='mealType'>Meal Type</label>
                 <select onChange={props.handleMealType}
-                value={props.mealType}>
-                    <option value=''></option>
+                value={props.mealType} id='mealType'>
+                    <option value=''>Meal Type</option>
                     <option value="breakfast">Breakfast</option>
                     <option value="lunch">Lunch</option>
                     <option value="dinner">Dinner</option>
@@ -86,7 +85,6 @@ const AdvancedForm = (props) => {
 
                 <button>Submit</button>
             </form>
-        </>
     )
 }
 

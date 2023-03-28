@@ -64,7 +64,7 @@ const Recipes = () => {
             handleSubmit={ handleSubmit}/>
             
             <Link to='/advancedSearch'>
-                <p>Advanced Search</p>
+                <p className='searchOption'>Advanced Search</p>
             </Link>
 
             <RecipeGallery 

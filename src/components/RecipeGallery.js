@@ -33,7 +33,7 @@ const RecipeGallery = (props) => {
 
                                 portion = {recipe.recipe.yield}
 
-                                key={recipe.index}
+                                key={recipe.recipe.totalWeight}
                                 />
                             )
                         })

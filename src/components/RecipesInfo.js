@@ -4,27 +4,37 @@ const RecipesInfo = (props) => {
 
             <h3>{props.recipeName}</h3>
             
-            <figure className='photo-container'>
-            <img src={props.photoUrl} alt={props.altText}></img>
-            </figure>
+            <div className="info-container">
+                <div className="gallery">
+                    <figure className='photo-container'>
+                        <img src={props.photoUrl} alt={props.altText}></img>
+                    </figure>
+                    <div className="caption">
+                        <ul>
+                            {props.ingredients.map((item, index)=>{
+                                return(
+                                    <li key={index}>{item}</li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </div>
 
-            <ul><h4>Ingredients:</h4> {props.ingredients.map((item)=>{
-                return(
-                    <li>{item}</li>
-                )
-            })}</ul>
+                <div className="text-container">
+                    
 
-            <h4>Portion Size: {props.portion}</h4>
+                    <h4>Portion Size: {props.portion} servings</h4>
 
-            <h4>Calories: {Math.round(props.calories *100)/100}</h4>
+                    <h4>Calories: {Math.round(props.calories *100)/100}</h4>
 
-            <div className="macros">
-            <h4>Macros: {props.macros}</h4>
-            <p>Carbs: {Math.round(props.carbs *100)/100}g | 
-            Protein: {Math.round(props.protein *100)/100}g | 
-            Fat: {Math.round(props.fat *100)/100}g</p>
+                    <div className="macros">
+                        <h4>Macros: {props.macros}</h4>
+                        <p>Carbs: {Math.round(props.carbs *100)/100}g | 
+                        Protein: {Math.round(props.protein *100)/100}g | 
+                        Fat: {Math.round(props.fat *100)/100}g</p>
+                    </div>
+                </div>
             </div>
-
             <a href={ props.fullRecipe } target='_blank' rel="noreferrer">View Full Recipe</a>
         </li>
     )
