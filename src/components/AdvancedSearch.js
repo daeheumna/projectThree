@@ -10,9 +10,10 @@ const AdvancedSearch = () => {
     
     const [ recipes, setRecipes] = useState([]);
     const [ mealType, setMealType ] = useState(null);
-    const [ diet, setDiet ] = useState(null);
+    const [ diet, setDiet ] = useState([]);
     const [ dishType, setDishType ] = useState(null);
-    const [ cuisineType, setCuisineType ] = useState(null);
+    const [ cuisineType, setCuisineType ] = useState(['']);
+    const [ healthLabel, setHealthLabel ] = useState(['']);
   
 
     const handleChange = (e) => {
@@ -34,6 +35,10 @@ const AdvancedSearch = () => {
     const handleCuisine = (e) => {
         setCuisineType(e.target.value);
     }
+
+    const handleHealth = (e) => {
+        setHealthLabel(e.target.value);
+    }
    
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -51,7 +56,8 @@ const AdvancedSearch = () => {
             mealType: mealType,
             diet: diet,
             dishType: dishType,
-            cuisineType: cuisineType  
+            cuisineType: cuisineType,
+            health: healthLabel  
         })
 
         fetch(url)
@@ -88,6 +94,7 @@ const AdvancedSearch = () => {
             handleDiet = { handleDiet}
             handleDishType = { handleDishType}
             handleCuisine = { handleCuisine}
+            handleHealth = { handleHealth }
             />
 
             <Link to='/' className='searchOption'>Basic Search</Link>

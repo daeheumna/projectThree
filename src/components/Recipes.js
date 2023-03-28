@@ -8,7 +8,6 @@ const Recipes = () => {
 
     const [ ingredientInput, setingredientInput ] = useState('')
     const [ recipes, setRecipes] = useState([]);
-    const [ apiError, setApiError ] = useState(false);
 
     const handleChange = (e) => {
         setingredientInput(e.target.value)
@@ -41,14 +40,12 @@ const Recipes = () => {
             .then((apiData) => {
                 console.log(apiData)
                 setRecipes(apiData.hits);
-                setApiError(false)
 
                 if (!apiData.hits[0]){
                     throw new Error()
                 }
             })
             .catch((err) => {
-                setApiError(true);
                 console.log(err.message)
                 alert("We couldn't find any recipes with that combination... Please try something else")
 

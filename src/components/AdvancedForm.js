@@ -86,6 +86,36 @@ const AdvancedForm = (props) => {
                         <option value="south american">South American</option>
                         <option value="south east asian">South East Asian</option>
                     </select>
+
+                    <label htmlFor="healthLabel" className="sr-only">Health Labels</label>
+                    <select onChange={props.handleHealth}
+                    value={props.healthLabel} id='healthLabel' required>
+                        <option value='' disabled selected>Health Labels</option>
+                        <option value="alcohol-free">Alochol Free</option>
+                        <option value="dairy-free">Dairy Free</option>
+                        <option value="DASH">DASH</option>
+                        <option value="egg-free">Egg Free</option>
+                        <option value="fish-free">Fish Free</option>
+                        <option value="fodmap-free">FODMAP Free</option>
+                        <option value="gluten-free">gluten-free</option>
+                        <option value="immuno-supportive">Immuno-supportive</option>
+                        <option value="keto-friendly">Keto Friendly</option>
+                        <option value="kidney-friendly">Kidney Friendly</option>
+                        <option value="kosher">Kosher</option>
+                        <option value="low-sugar">Low Sugar</option>
+                        <option value="paleo">Paleo</option>
+                        <option value="peanut-free">Peanut Free</option>
+                        <option value="pecatarian">Pecatarian</option>
+                        <option value="pork-free">Pork Free</option>
+                        <option value="red-meat-free">Red Meat Free</option>
+                        <option value="sesame-free">Sesame Free</option>
+                        <option value="soy-free">Soy Free</option>
+                        <option value="sulfite-free">Sulfite Free</option>
+                        <option value="tree-nut-free">Tree Nut Free</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="wheat-free">Wheat Free </option>
+                    </select>
                 </div>
 
                 <button>Submit</button>
