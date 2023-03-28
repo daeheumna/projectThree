@@ -1,21 +1,34 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-// import axios from 'axios';
-
-import Form from './Form';
+import AdvancedForm from './AdvancedForm';
 import RecipeGallery from './RecipeGallery';
 
-const Recipes = () => {
+import { Link } from 'react-router-dom';
+
+const AdvancedSearch = () => {
 
     const [ ingredientInput, setingredientInput ] = useState('')
+    
     const [ recipes, setRecipes] = useState([]);
-    const [ apiError, setApiError ] = useState(false);
+    const [ mealType, setMealType ] = useState(null);
+    const [ diet, setDiet ] = useState(null);
+    const [ dishType, setDishType ] = useState(null);
 
-    // const [ mealType, setMealType ] = useState('breakfast')
+  
 
     const handleChange = (e) => {
-        setingredientInput(e.target.value)
+        setingredientInput(e.target.value);
+    }
+
+    const handleMealType = (e) => {
+        setMealType(e.target.value);
+    }
+
+    const handleDiet = (e) => {
+        setDiet(e.target.value);
+    }
+
+    const handleDishType = (e) => {
+        setDishType(e.target.value);
     }
    
     const handleSubmit = (e) => {
@@ -30,9 +43,11 @@ const Recipes = () => {
             app_id: '37457af6',
             app_key: '4e5b5013620e0769c87783ec9aef2ca3',
             random: true,
-            q: ingredientInput
-            // cuisineType: 'world',
-            // dishType:
+            q: ingredientInput,
+            mealType: mealType,
+            Diet: diet,
+            dishType: dishType
+            
             
         })
 
@@ -46,32 +61,33 @@ const Recipes = () => {
             })
             .then((apiData) => {
                 setRecipes(apiData.hits);
-                setApiError(false)
+               
             })
-            .catch((err) => {
-                setApiError(true);
-
-            })
+            
     }
 
 
     return (
         <main>
 
-            <Form 
-            handleChange={handleChange} 
+            <AdvancedForm 
+            handleChange={handleChange}
+            handleMealType = {handleMealType} 
             typedValue={ingredientInput}
-            handleSubmit={ handleSubmit}/>
-            
-            <Link to='/advancedSearch'>
-                <p>Advanced Search</p>
-            </Link>
+            handleSubmit={ handleSubmit}
+            handleDiet = { handleDiet}
+            handleDishType = { handleDishType}/>
 
-            <RecipeGallery 
+            <Link to='/'>
+                <p>Basic Search</p>
+            </Link>
+            
+            <RecipeGallery
             recipes={recipes}/>
             
         </main>
     )
 }
 
-export default Recipes;
+
+export default AdvancedSearch;

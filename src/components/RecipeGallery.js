@@ -2,37 +2,44 @@ import RecipesInfo from "./RecipesInfo"
 
 const RecipeGallery = (props) => {
 
-    // const displayRecipes = () => {
-    //     props.recipes.map((recipe) => {
-    //         return (
-    //             <li>{recipe.recipe.label}</li>
-    //         )
-    //     })
-    // }
-
     return (
         <section>
-            <h2>Random Recipes based on your search!</h2>
+            <div className="wrapper">
+                
 
-            <ul className="recipes">
-                {
-                    props.recipes.map((recipe) => {
-                        return (
-                            <RecipesInfo 
-                            
-                            recipeName = {recipe.recipe.label}
-                            fullRecipe = { recipe.recipe.url}
+                <ul className="recipes">
+                
+                    {
+                        props.recipes.map((recipe) => {
+                            return (
+                                <RecipesInfo 
+                                
+                                recipeName = {recipe.recipe.label}
+                                fullRecipe = { recipe.recipe.url}
 
-                            photoUrl = { recipe.recipe.image}
+                                photoUrl = { recipe.recipe.image}
 
-                            altText = { recipe.recipe.label}
-                            
-                            key={recipe.recipe.calories}
-                            />
-                        )
-                    })
-                }
-            </ul>
+                                altText = { recipe.recipe.label}
+
+                                calories = {recipe.recipe.calories}
+                                
+                                ingredients = {recipe.recipe.ingredientLines}
+
+                                carbs = {recipe.recipe.totalNutrients.CHOCDF.quantity}
+
+                                protein = {recipe.recipe.totalNutrients.PROCNT.quantity}
+
+                                fat = {recipe.recipe.totalNutrients.FAT.quantity}
+
+                                portion = {recipe.recipe.yield}
+
+                                key={recipe.index}
+                                />
+                            )
+                        })
+                    }
+                </ul>
+            </div>
         </section>
     )
 }
