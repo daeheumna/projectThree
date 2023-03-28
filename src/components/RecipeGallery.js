@@ -5,12 +5,10 @@ const RecipeGallery = (props) => {
     return (
         <section>
             <div className="wrapper">
-                
 
                 <ul className="recipes">
-                
                     {
-                        props.recipes.map((recipe) => {
+                        props.recipes.map((recipe,index) => {
                             return (
                                 <RecipesInfo 
                                 
@@ -33,7 +31,7 @@ const RecipeGallery = (props) => {
 
                                 portion = {recipe.recipe.yield}
 
-                                key={recipe.recipe.totalWeight}
+                                key={index}
                                 />
                             )
                         })

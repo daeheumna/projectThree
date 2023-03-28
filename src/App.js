@@ -11,7 +11,7 @@ function App() {
   
           <h2>Random Recipe Generator</h2>
 
-        <h6>Feeling unsure what to cook? Enter ingredient(s) below and we'll generate random recipes for you! For multiple ingredients, seperate them using commas.</h6>
+        <h5>Feeling unsure what to cook? Enter ingredient(s) below and we'll generate random recipes for you! For multiple ingredients, seperate them using commas.</h5>
       </header>
 
       <Routes>
@@ -20,6 +20,9 @@ function App() {
       </Routes>
 
     
+    <footer>
+      <p>made in 2023 by Denny Na</p>
+    </footer>
     </div>
   );
 }

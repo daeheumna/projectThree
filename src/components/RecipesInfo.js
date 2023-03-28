@@ -15,17 +15,16 @@ const RecipesInfo = (props) => {
                                 return(
                                     <li key={index}>{item}</li>
                                 )
-                            })}
+                            })
+                            }
                         </ul>
                     </div>
                 </div>
 
                 <div className="text-container">
-                    
+                    <p><strong>Portion Size: </strong> {props.portion} servings</p>
 
-                    <h4>Portion Size: {props.portion} servings</h4>
-
-                    <h4>Calories: {Math.round(props.calories *100)/100}</h4>
+                    <p><strong>Calories: </strong>{Math.round(props.calories *100)/100}</p>
 
                     <div className="macros">
                         <h4>Macros: {props.macros}</h4>

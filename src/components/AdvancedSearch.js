@@ -59,12 +59,19 @@ const AdvancedSearch = () => {
                 if (result.ok){
                 return result.json();
                 } else {
-                    throw new Error('This call was not successful');
+                    throw new Error(result.statusText);
                 }
             })
             .then((apiData) => {
                 setRecipes(apiData.hits);
-               
+
+                if (!apiData.hits[0]){
+                    throw new Error()
+                }
+            }).catch(() => {
+          
+                alert("We couldn't find any recipes with that combination... Please try something else!")
+
             })
             
     }
@@ -83,9 +90,7 @@ const AdvancedSearch = () => {
             handleCuisine = { handleCuisine}
             />
 
-            <Link to='/'>
-                <p className='searchOption'>Basic Search</p>
-            </Link>
+            <Link to='/' className='searchOption'>Basic Search</Link>
             
             <RecipeGallery
             recipes={recipes}/>

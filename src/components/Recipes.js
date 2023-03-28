@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// import axios from 'axios';
-
 import Form from './Form';
 import RecipeGallery from './RecipeGallery';
 
@@ -11,8 +9,6 @@ const Recipes = () => {
     const [ ingredientInput, setingredientInput ] = useState('')
     const [ recipes, setRecipes] = useState([]);
     const [ apiError, setApiError ] = useState(false);
-
-    // const [ mealType, setMealType ] = useState('breakfast')
 
     const handleChange = (e) => {
         setingredientInput(e.target.value)
@@ -31,25 +27,30 @@ const Recipes = () => {
             app_key: '4e5b5013620e0769c87783ec9aef2ca3',
             random: true,
             q: ingredientInput
-            // cuisineType: 'world',
-            // dishType:
-            
         })
 
         fetch(url)
             .then((result) => {
+                console.log(result)
                 if (result.ok){
-                return result.json();
+                    return result.json();
                 } else {
-                    throw new Error('This call was not successful');
+                    throw new Error(result.statusText);
                 }
             })
             .then((apiData) => {
+                console.log(apiData)
                 setRecipes(apiData.hits);
                 setApiError(false)
+
+                if (!apiData.hits[0]){
+                    throw new Error()
+                }
             })
             .catch((err) => {
                 setApiError(true);
+                console.log(err.message)
+                alert("We couldn't find any recipes with that combination... Please try something else")
 
             })
     }
@@ -63,9 +64,7 @@ const Recipes = () => {
             typedValue={ingredientInput}
             handleSubmit={ handleSubmit}/>
             
-            <Link to='/advancedSearch'>
-                <p className='searchOption'>Advanced Search</p>
-            </Link>
+            <Link to='/advancedSearch' className='searchOption'>Advanced Search</Link>
 
             <RecipeGallery 
             recipes={recipes}/>
