@@ -10,7 +10,7 @@ function App() {
       <div className="wrapper">
         <header>
     
-            <h2>Random Recipe Generator</h2>
+            <h1>Random Recipe Generator</h1>
 
           <h5>Feeling unsure what to cook? Enter ingredient(s) below and we'll generate random recipes for you! For multiple ingredients, seperate them using commas.</h5>
         </header>

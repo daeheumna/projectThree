@@ -67,6 +67,10 @@ header {
   color: #2F3C7E;
 }
 
+header h1 {
+  font-size: 1.5rem;
+}
+
 header h5 {
   font-weight: 400;
   width: 350px;
@@ -81,6 +85,7 @@ input {
   border: none;
   font-size: 0.7rem;
   width: 400px;
+  background-color: #FFF;
 }
 
 form button {
@@ -90,7 +95,7 @@ form button {
   margin-bottom: 10px;
   padding: 10px 20px;
   background-color: #2F3C7E;
-  border: 3px solid #FFFBFF;
+  border: 3px solid #FFF;
   border-radius: 25px;
   color: #FBEAEB;
   font-weight: 700;
@@ -131,7 +136,7 @@ form button {
 }
 
 .advancedSearch select {
-  background-color: #FFFBFF;
+  background-color: #FFF;
   border: none;
   border-radius: 25px;
   font-size: 0.7rem;
@@ -154,7 +159,7 @@ form button {
   background-color: #2F3C7E;
   padding: 5px;
   border-radius: 20px;
-  border: 5px solid #FFFBFF;
+  border: 5px solid #FFF;
   align-items: center;
 }
 
@@ -165,6 +170,7 @@ form button {
   text-decoration-line: underline;
   color: #FBEAEB;
   width: 50%;
+  font-size: 0.9rem;
 }
 
 .gallery {
@@ -212,11 +218,13 @@ form button {
 .recipe-container h3 {
   padding: 10px 0 10px 0;
   color: #FBEAEB;
+  font-size: 1rem;
 }
 
 .text-container p {
   margin-bottom: 5px;
   color: #FBEAEB;
+  font-size: 0.9rem;
 }
 
 
