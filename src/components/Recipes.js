@@ -30,7 +30,6 @@ const Recipes = () => {
 
         fetch(url)
             .then((result) => {
-                console.log(result)
                 if (result.ok){
                     return result.json();
                 } else {
@@ -38,7 +37,6 @@ const Recipes = () => {
                 }
             })
             .then((apiData) => {
-                console.log(apiData)
                 setRecipes(apiData.hits);
 
                 if (!apiData.hits[0]){
@@ -55,7 +53,6 @@ const Recipes = () => {
 
     return (
         <main>
-
             <Form 
             handleChange={handleChange} 
             typedValue={ingredientInput}
@@ -65,7 +62,6 @@ const Recipes = () => {
 
             <RecipeGallery 
             recipes={recipes}/>
-            
         </main>
     )
 }

@@ -79,9 +79,7 @@ const AdvancedSearch = () => {
                 alert("We couldn't find any recipes with that combination... Please try something else!")
 
             })
-            
     }
-
 
     return (
         <main>
@@ -94,8 +92,7 @@ const AdvancedSearch = () => {
             handleDiet = { handleDiet}
             handleDishType = { handleDishType}
             handleCuisine = { handleCuisine}
-            handleHealth = { handleHealth }
-            />
+            handleHealth = { handleHealth }/>
 
             <Link to='/' className='searchOption'>Basic Search</Link>
             
