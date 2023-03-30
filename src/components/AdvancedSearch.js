@@ -49,8 +49,8 @@ const AdvancedSearch = () => {
         const url = new URL('https://api.edamam.com/api/recipes/v2');
         url.search = new URLSearchParams({
             type: 'any',
-            app_id: '37457af6',
-            app_key: '4e5b5013620e0769c87783ec9aef2ca3',
+            app_id: process.env.REACT_APP_API_ID,
+            app_key: process.env.REACT_APP_API_KEY,
             random: true,
             q: ingredientInput,
             mealType: mealType,

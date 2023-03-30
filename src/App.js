@@ -23,7 +23,7 @@ function App() {
     </div>
 
     <footer>
-      <p>made in 2023 by Denny Na</p>
+      <p>made in 2023 by Denny Na. Credits to edamam api.</p>
     </footer>
     </div>
   );

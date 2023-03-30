@@ -200,7 +200,6 @@ form button {
   transition: opacity 0.3s;
 }
 
-
 .gallery .caption:hover {
   opacity: 1;
 }
@@ -209,11 +208,9 @@ form button {
   overflow-y: scroll;
 }
 
-
 .gallery .caption li {
   font-size: 0.9rem;
 }
-
 
 .recipe-container h3 {
   padding: 10px 0 10px 0;
@@ -226,7 +223,6 @@ form button {
   color: #FBEAEB;
   font-size: 0.9rem;
 }
-
 
 .text-container h4 {
   margin-top: 10px;
@@ -247,7 +243,6 @@ footer p {
   color: #FBEAEB;
   border-top: 3px solid #FFFBFF;
 }
-
 
 @media (max-width: 1415px) {
   .recipe-container {
@@ -274,4 +269,14 @@ footer p {
     width: 40%;
   }
   
+}
+
+@media (max-width: 400px){
+  header h5{
+    width: 250px;
+  }
+
+  input {
+    width: 250px;
+  }
 }

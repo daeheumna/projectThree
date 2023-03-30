@@ -1,7 +1,4 @@
-
-
 const AdvancedForm = (props) => {
-
 
     return (
 
